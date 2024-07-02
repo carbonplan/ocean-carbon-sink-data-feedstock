@@ -26,16 +26,16 @@ jobs:
         with:
           single-feedstock: "./feedstock/catalog.yaml"
 
-      - name: Dispatch event
-        uses: actions/github-script@v4
-        with:
-          github-token: ${{ secrets.GH_USER_TOKEN }}
-          script: |
-            await github.repos.createDispatchEvent({
-              owner: 'leap-stc',
-              repo: 'data-management',
-              event_type: 'update-catalog',
-              client_payload: {
-                origin_repo: `${context.repo.owner}/${context.repo.repo}`
-              }
-            })
+      # - name: Dispatch event
+      #   uses: actions/github-script@v4
+      #   with:
+      #     github-token: ${{ secrets.GH_USER_TOKEN }}
+      #     script: |
+      #       await github.repos.createDispatchEvent({
+      #         owner: 'leap-stc',
+      #         repo: 'data-management',
+      #         event_type: 'update-catalog',
+      #         client_payload: {
+      #           origin_repo: `${context.repo.owner}/${context.repo.repo}`
+      #         }
+      #       })
