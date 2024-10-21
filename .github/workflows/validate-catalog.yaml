@@ -28,11 +28,11 @@ jobs:
         uses: leap-stc/data-catalog-actions/leap-catalog@main
         with:
           generation-single: "./feedstock/catalog.yaml"
-          output-directory: "./catalog"
+          output-directory: "./"
 
       - name: Commit changes
         run: |
-          cat catalog/output/consolidated-web-catalog.json | jq
+          cat output/consolidated-web-catalog.json | jq
 
       # - name: Dispatch event
       #   uses: actions/github-script@v4
