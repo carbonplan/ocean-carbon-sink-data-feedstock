@@ -30,7 +30,7 @@ jobs:
           generation-single: "./feedstock/catalog.yaml"
           output-directory: "./"
 
-      - name: Commit changes
+      - name: display catalog
         run: |
           cat output/consolidated-web-catalog.json | jq
 
